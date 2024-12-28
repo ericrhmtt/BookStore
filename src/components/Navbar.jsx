@@ -1,8 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import Logo from "../assets/website/logo.png";
-import { FaCartShopping } from "react-icons/fa6";
-import DarkMode from "./DarkMode";
 import { FaCaretDown } from "react-icons/fa";
 
 const Menu = [
@@ -23,7 +21,6 @@ const DropdownLinks = [
     name: "Trending Books",
     link: "#TerndingBooks",
   },
-  
   {
     name: "Testimonial",
     link: "#Testimonial",
@@ -31,10 +28,10 @@ const DropdownLinks = [
 ];
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({handleOrderPopup}) => {
+const Navbar = () => {
   return (
     <>
-      <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
+      <div className="shadow-md bg-white duration-200">
         <div className="container py-3 sm:py-0">
           <div className="flex justify-between items-center">
             <div>
@@ -44,9 +41,6 @@ const Navbar = ({handleOrderPopup}) => {
               </a>
             </div>
             <div className="flex justify-between items-center gap-4">
-              <div>
-                <DarkMode />
-              </div>
               <ul className="hidden sm:flex items-center gap-4">
                 {Menu.map((menu) => (
                   <li key={menu.id}>
@@ -69,7 +63,7 @@ const Navbar = ({handleOrderPopup}) => {
                       <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                     </span>
                   </a>
-                  <div className="absolute -left-9 z-[9999] hidden w-[170px] rounded-md bg-white p-2 text-black group-hover:block  ">
+                  <div className="absolute -left-9 z-[9999] hidden w-[170px] rounded-md bg-white p-2 text-black group-hover:block">
                     <ul className="space-y-3">
                       {DropdownLinks.map((data) => (
                         <li key={data.name}>
@@ -85,13 +79,6 @@ const Navbar = ({handleOrderPopup}) => {
                   </div>
                 </li>
               </ul>
-              <button
-                onClick={() => handleOrderPopup()}
-                className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
-              >
-                Order
-                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-              </button>
             </div>
           </div>
         </div>
